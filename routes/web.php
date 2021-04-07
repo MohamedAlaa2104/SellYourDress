@@ -3,6 +3,7 @@
 use App\Http\Controllers\Dashboard\Category\CategoryController;
 use App\Http\Controllers\Dashboard\ContactUs\ContactUsController;
 use App\Http\Controllers\Dashboard\Home\HomeController;
+use App\Http\Controllers\Dashboard\Orders\OrdersController;
 use App\Http\Controllers\Dashboard\Product\ProductController;
 use App\Http\Controllers\Dashboard\Role\RoleController;
 use App\Http\Controllers\Dashboard\User\UserController;
@@ -58,6 +59,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale() ,'middleware' => [ 'l
 
         Route::resource('contactus', ContactUsController::class)->only(['index', 'show', 'destroy']);
         Route::get('contactus-table', [ContactUsController::class, 'contactUsTable'])->name('contactus-table');
+
+        /***************************************************  Routes For Orders  ***************************************************/
+
+        Route::resource('orders', OrdersController::class);
+        Route::get('orders-table', [OrdersController::class, 'ordersTable'])->name('orders-table');
     });
 
 });

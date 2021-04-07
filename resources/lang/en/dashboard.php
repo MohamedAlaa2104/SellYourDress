@@ -56,4 +56,5 @@ return [
     'contact_us'=>'Contact us messages',
     'phone'=>'Phone',
     'content'=>'Message content',
+    'orders'=>'Orders',
 ];
